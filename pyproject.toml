@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "python-template"
+version = "0.1.0"
+description = "A Python project template with Flask and Instagrapi."
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"  # Python version range
+flask = "^3.0.3"  # Web framework
+requests = "^2.32.3"  # HTTP requests
+instagrapi = "^1.19.5"  # Official Instagram API library
+gunicorn = "^21.2.0"  # Production WSGI server
+python-dotenv = "^1.0.0"  # Environment variable management
+pillow = "^9.5.0"  # Image processing library
+instagram_private_api = { git = "https://github.com/ping/instagram_private_api.git" }  # Unofficial private API
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"  # Testing framework
+black = "^23.9.0"  # Code formatter
+
+[tool.pyright]
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
